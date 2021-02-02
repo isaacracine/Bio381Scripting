@@ -104,3 +104,65 @@ First Header  | Second Header
 ------------- | -------------
 Content Cell  | Content Cell
 Content Cell  | *formatted text*
+
+# LaTeX code for equations
+
+We set off equations `$` for brackets.
+
+## In-line equations appear inside
+
+These equations such as $a = 3 + 4$ will appear inside of a single line of text.
+
+These equations such as $$a = 3 + 4$$ will appear in a separate line of their own.
+
+## Subscripts
+
+$$H_0 =  Z_{a + b}$$
+
+## Superscripts
+
+$$S = cA^z$$
+
+Elements can be coupled and nested.
+
+$$S = cA^Z_1 + z_{2 + x}$$
+
+## Fractions and Greek Symbols
+
+$$\alpha = \frac{\beta}{\delta + \gamma_x}$$
+
+## Summation signs
+
+$$z = \sum_{i = 1}^X{K}$$
+
+## Escape the backslash with a custom term
+
+$$\backslash \alpha \le b \backslash$$
+
+## Rendering plain text in a LaTeX equation
+
+$$P(Occurence of Species A) = Z$$
+
+$$P(\mbox{Occurence of Species A}) = Z$$
+
+# Inserting a "Chunk" of code
+```{r}
+# Don't forget to start with comments
+# Let's make a predictor variable
+
+#Preliminaries
+library(ggplot2)
+
+pred <- 1:10 #vector of 10 integers
+res <- runif(10) #random uniform values
+
+#print the random numbers
+print(res)
+
+#plot the graph
+qplot(x = pred, y = res)
+
+```
+
+Now back to writing text in our markdown document, including LaTeX equations if we need them, such as $a + b$ insertind in the middle of my sentence.
+
