@@ -1,0 +1,35 @@
+---
+title: "My first markdown document"
+author: "Isaac Racine"
+date: "2/2/2021"
+output:
+  html_document: 
+    number_sections: yes
+  word_document: default
+  pdf_document: default
+---
+
+Add text here. Just use it like a typewriter, and add as much or as little as you like.
+
+New text appears here in a separate paragraph.
+
+Use 2 or more blank sapces at the end of a single-spaced line to render to a new line.
+
+# First level header
+
+## Second level header
+
+### Third level header
+
+# Basic text formating
+
+italic *text* like this
+
+
+bold **text** like this
+
+subscript~text~ like this 
+
+superscript^text^ like this
+
+strikethrough ~~text~~ like this
