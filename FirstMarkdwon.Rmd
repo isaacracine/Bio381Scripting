@@ -33,3 +33,74 @@ subscript~text~ like this
 superscript^text^ like this
 
 strikethrough ~~text~~ like this
+
+# Lists
+
+## Unordered lists
+
+* Item 1
+* Item 2
+    + Item 2a
+    + Item 2b
+    
+## Ordered lists
+
+1. Item 1
+2. Item 2
+3. Item 3
+    + Item 3a
+    + Item 3b
+    
+# Fencing
+
+In line fencing with a backtick `to show anything in plain text with *no* formatting` which can be useful for many things.
+
+In line execution of r inside the backticks by inserting r as the first element `r 3 + pi`
+
+In line execution of r inside the backticks by inserting r as the first element `3 + pi`
+
+3 backticks for a whole section of plain text
+
+```
+everything in here is in plain text. 
+even single lines.
+
+useful especially when showing other coding instructions.
+```
+
+# Block quotes with `>`
+
+> To be or not to be, that is the question.
+Whether tis nobler... blah blah blah
+
+# SPacer line with 3 or more underscores
+
+___
+
+Adds a line between text...
+
+# Linkes
+http://example.com
+
+[linked phrase](http://example.com) 
+
+A [linked phrase][id]. 
+
+At the bottom of the document:
+
+[id]: http://example.com/ "Title"
+
+# Images
+
+Can either be on the web or in the same directory that the code is sitting.
+
+Example:
+`![alt text][id]`
+`![alt text][figure/img.png]`
+
+# Table
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | *formatted text*
