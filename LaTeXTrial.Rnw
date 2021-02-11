@@ -1,0 +1,56 @@
+\documentclass{article}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+% In LaTeX: the % sign is the comment character, not the # in R or shell scripts.
+
+%remove asterisk to number titles
+\section*{Main Title}
+
+\subsection*{Second level title!}
+
+\subsubsection*{Third level title}
+
+Here is \textbf{bold face}.
+
+Here is \textit{italic font}.
+
+Here is \texttt{plain text}.
+
+
+``Use two back ticks to start a quotation and two ingle quotes to end a quotation ''. 
+
+\begin{itemize}
+  \item first bullet point
+  \item second bullet point
+  \item third bullet point
+\end{itemize}
+
+\begin{enumerate}
+  \item first bullet point
+  \item second bullet point
+  \item third bullet point
+\end{enumerate}
+
+Fortunately, most of what you do for writing in \LaTeX actually follows the rules for plain text!
+
+\begin{verbatim}
+Text here is literal, with no formatting signs.\\ Careful, there is a lso no margin control!
+\end{verbatim}
+
+\begin{quote}
+This indents an entire paragraph for an extended quotations.
+\end{quote}
+
+%now let's fence for some r code
+<<echo=TRUE>>=
+x <- runif(10)
+y <- runif(10)
+#comments in R as always with a #
+print(x)
+plot(x,y)
+@
+
+
+\end{document}

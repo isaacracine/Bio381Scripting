@@ -10,3 +10,5 @@ head(biomass)
 print(rainfall)
 head(rainfall)
 plot(x = rainfall, y = biomass)
+
+

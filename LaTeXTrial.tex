@@ -1,0 +1,65 @@
+\documentclass{article}
+
+\usepackage{Sweave}
+\begin{document}
+\input{LaTeXTrial-concordance}
+
+% In LaTeX: the % sign is the comment character, not the # in R or shell scripts.
+
+%remove asterisk to number titles
+\section*{Main Title}
+
+\subsection*{Second level title!}
+
+\subsubsection*{Third level title}
+
+Here is \textbf{bold face}.
+
+Here is \textit{italic font}.
+
+Here is \texttt{plain text}.
+
+
+``Use two back ticks to start a quotation and two ingle quotes to end a quotation ''. 
+
+\begin{itemize}
+  \item first bullet point
+  \item second bullet point
+  \item third bullet point
+\end{itemize}
+
+\begin{enumerate}
+  \item first bullet point
+  \item second bullet point
+  \item third bullet point
+\end{enumerate}
+
+Fortunately, most of what you do for writing in \LaTeX actually follows the rules for plain text!
+
+\begin{verbatim}
+Text here is literal, with no formatting signs.\\ Careful, there is a lso no margin control!
+\end{verbatim}
+
+\begin{quote}
+This indents an entire paragraph for an extended quotations.
+\end{quote}
+
+%now let's fence for some r code
+\begin{Schunk}
+\begin{Sinput}
+> x <- runif(10)
+> y <- runif(10)
+> #comments in R as always with a #
+> print(x)
+\end{Sinput}
+\begin{Soutput}
+ [1] 0.01096641 0.94403231 0.66538837 0.78180883 0.94423936 0.81089432
+ [7] 0.14727531 0.36188152 0.91732565 0.40214386
+\end{Soutput}
+\begin{Sinput}
+> plot(x,y)
+\end{Sinput}
+\end{Schunk}
+
+
+\end{document}
