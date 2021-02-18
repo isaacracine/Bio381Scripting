@@ -161,7 +161,7 @@ write.table(x = my_data,
 #####INSTEAD use saveRDS() function to create a binary obj
 #that R can read and use
 #use .. instead for RELATIVE path
-#us optinal .RDS suffix for clarity
+#us optional .RDS suffix for clarity
 saveRDS(my_data,
         file = "C:/Users/isaac/Desktop/my_data.RDS")
  
