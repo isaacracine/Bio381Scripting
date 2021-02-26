@@ -172,4 +172,54 @@ ggsave(filename = "LogisticRegPlotPractice.pdf",
        device = "pdf")
 
 
-#------------------Contingency Table------------
+#------------------Contingency Table--------------
+#counts for different classifications
+
+vec_1 <- c(50, 66, 22)
+vec_2 <- c(120, 22, 33)
+
+data_matrix <- rbind(vec_1,vec_2)
+rownames(data_matrix) <- c("Cold", "Warm")
+colnames(data_matrix) <- c("Species1", "Species2", "Species3")
+print(data_matrix)
+
+#Null is that the proportions of are same across cols or rows
+
+#Statistical analysis
+print(chisq.test(data_matrix))
+
+#base R has better plots for these
+#plotting contingency data
+mosaicplot(x = data_matrix,
+           color = c("goldenrod","grey","black"),
+                     shade=FALSE)
+
+barplot(height = data_matrix,
+        beside = TRUE, #places bars next to each other
+        col = c("cornflowerblue","tomato"))
+
+
+##NOW let's do it in GGPLOT
+#data wrangling problem
+
+d_frame <- as.data.frame(data_matrix)
+print(d_frame)
+
+#make names for cols rows
+d_frame <- cbind(d_frame, list(Treatment = c("Cold", "Warm")))
+print(d_frame)
+d_frame <- gather(d_frame,
+                  key = Species,  #used to split things
+                  Species1:Species3,
+                  value = Counts)
+print(d_frame)
+
+contingency_graph <- ggplot(d_frame, aes(x = Species,
+                                         y = Counts,
+                                         fill = Treatment)) +
+  geom_bar(stat = "identity",
+           position = "dodge",
+           color = I("black")) +
+  scale_fill_manual(values = c("cornflowerblue","tomato"))
+
+print(contingency_graph)
