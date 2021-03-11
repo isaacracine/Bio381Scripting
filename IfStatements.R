@@ -130,3 +130,79 @@ d <-  c(10,12)
 #each element in d compared to argument
 d %in% union(a,b)
 d %in% a
+
+#-------------- if statement ---------------
+# anatomy of if statements
+
+# if (condition) expression
+
+# if (condition) expression1 else expression2
+
+# if (condition1) expression 1 else
+# if (condition2) expression 2 else
+# expression 3
+
+# - final unspecified else captures rest of the unspecified conditions
+# else statement must appear on the same line as previous expression
+# instead of single expression, can use curly brackets to 
+# execute a set of lines when condition is met {}
+
+z <- signif(runif(1), digits = 2)
+print(z)
+
+
+# simple statement
+if (z > 0.5) cat(z, " is a bigger than average number", "\n")
+
+# more complex: if statement w/ 2 outcomes
+if (z > 0.8) cat(z, " is a large number\n") else 
+if (z < 0.2) cat(z, " is a small number\n") else
+{cat(z, " is a number of typical size\n")
+  cat("z^2 = ", z^2, "\n")}
+
+
+# if statement wants a single boolean value
+# if you give an if statement a vector of booleans
+# it will operate only on the very first element in that vector
+z <- 1:10
+
+#this does not do anything
+if (z > 7) print(z)
+
+# probably not what you want 
+if (z < 7) print(z)
+
+# use  subsetting!
+print(z[z < 7])
+
+#-------------- ifelse statement ---------------
+# ifelse(test, yes, no)
+# 'test; is an object that can be coerced into a logical
+# TRUE/FALSE
+# "yes" returns values for true elements in the test
+# "no" returns values for false values in the test
+
+# suppose we have an insect population in which each female
+# lays on average, 10.2 eggs, following a Poisson distribution
+# lambda = 10.2. However, there's a 35% chance of parasitism
+# in which case no eggs are laid. Here is a random sample of
+# eggs laid for a group of 1000 nidividuals
+
+tester <- runif(1000) # start with random uniform elements
+
+# makes case in which no parasite
+eggs <- ifelse(tester > 0.35, rpois(n=1000, lambda = 10.2), 0) 
+hist(eggs)
+
+# suppose we have a vector of probability values (perhaps from a simulation). We want to highlight significant values in the vector for plotting
+
+p_vals <- runif(1000)
+z <- ifelse(p_vals <= 0.025, "lower_tail", "non_sig")
+z[p_vals >= 0.975] <- "upper_tail"
+table(z)
+
+# Here is how I would do it
+z1 <- rep("non_sig", 1000)
+z1[p_vals <= 0.025] <- "lower_tail"
+z1[p_vals >= 0.975] <- "upper_tail"
+table(z1)
