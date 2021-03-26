@@ -93,10 +93,11 @@ read_data <- function(z = NULL) {
     y_obs <- x_obs + 10 * rnorm(20)
     df <- data.frame(ID = seq_along(x_obs),
                      x_obs,
-                     y_obs)}
-#    df <- read.table(file = z,
- #                    header = TRUE,
-  #                   stringsAsFactors = FALSE)
+                     y_obs)
+  } else {
+    df <- read.table(file = z,
+                     header = TRUE,
+                     stringsAsFactors = FALSE)}
 
 return(df)
 
